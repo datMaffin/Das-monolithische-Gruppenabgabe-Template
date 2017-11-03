@@ -1,1 +1,1 @@
-# Das-monolithische-Gruppenabgabe-Template
+# Latex Templates und Workflows

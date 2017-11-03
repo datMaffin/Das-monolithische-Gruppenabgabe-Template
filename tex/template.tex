@@ -1,0 +1,154 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% "Import" von Packages + Einrichten davon, die für das Template nötig sind %%
+
+\documentclass[12pt]{article} % Deklaration des Dokumententyps mit Schriftgröße
+
+\usepackage[ngerman]{babel} % Deutsche Silbentrennung, Rechtschreibung, etc.
+\usepackage[utf8]{inputenc} % Benutzung von UTF-8 als Eingabekodierung
+\usepackage{cmap} % Ermöglicht copy'n'paste vor fontenc laden, da sonst Warnung
+\usepackage[T1]{fontenc} % Ausgabefont
+
+% keine überlappende Kopfzeile + generell mehr Platz
+\usepackage[
+    a4paper,
+    lmargin={2cm},
+    rmargin={2cm},
+    tmargin={3.5cm},
+    bmargin = {2.5cm},
+    headheight = {4cm}
+]{geometry}
+
+% Kopfzeile
+\usepackage{fancyhdr} 
+\pagestyle{fancy} 
+\fancyhf{} % alle Kopf- und Fußzeilenfelder bereinigen
+\fancyfoot[C]{\thepage} % Seitenzahl erwünscht
+
+%% "Import" von Packages + Einrichten davon, die für das Template nötig sind %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aufgabenbedingte packages %
+
+% Aufgabenbedingte packages %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Zentrale Informationen %%
+
+\newcounter{sheetnr}
+\setcounter{sheetnr}{42} % !!!UPDATEN!!! %
+
+\newcommand{\namei}{Name A} % Variable \namei mit Wert "Name A"
+\newcommand{\matrknri}{MatrkNr A} % Variable \matrknri mit Wert "MatrkNr A"
+\newcommand{\emaili}{Email A} % Variable \emaili mit Wert "Email A"
+
+\newcommand{\nameii}{Name B} % Variable ...
+\newcommand{\matrknrii}{MatrkNr B} % Variable ...
+\newcommand{\emailii}{Email B} % Variable ...
+
+\newcommand{\nameiii}{Name C} % Variable ...
+\newcommand{\matrknriii}{MatrkNr C} % Variable ...
+\newcommand{\emailiii}{Email C} % Variable ...
+
+%% Zentrale Informationen %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%
+%% Kopfzeile %%
+
+% Rechter Teil der Kopfzeile:
+% Namen und Matrikelnummern aller Bearbeiter
+\rhead{\namei (\matrknri)\\
+\nameii (\matrknrii)\\
+\nameiii (\matrknriii)}
+
+% Linker Teil der Kopfzeile
+\lhead{Systemkonzepte \& Programmierung\\
+Wintersemester 2017/18\\
+Übungsblatt \thesheetnr}
+
+%% Kopfzeile %%
+%%%%%%%%%%%%%%%
+
+
+\begin{document} % Deklaration des Beginns des Dokuments
+
+%%%%%%%%%%%%%%%%
+%% Titelseite %%
+
+\begin{titlepage}
+	\centering
+	\rule{12cm}{1.0pt} % Die dicke Linie
+	{\scshape\LARGE Name des Moduls \par}
+	
+	\vspace{0.5cm} % Abstand
+	
+	{\Large Wintersemester 2017/18}
+	
+	\vspace{1.5cm} % Abstand
+	
+	{\scshape\Large Universität Stuttgart\par}
+	
+	\vspace{1.0cm} % Abstand
+	
+	\rule{8cm}{0.6pt} % Die dünne Linie
+	
+	{\huge\bfseries Übungsblatt \thesheetnr \par}
+	
+	\vspace{2cm} % Abstand
+	
+	{\Large\itshape \namei} % Name
+	{\Large (\matrknri)\par} % Matrikelnummer + Absatz
+	{\large \emaili \par} % Email + Absatz
+	
+	\vspace{0.5cm} % Abstand
+	
+	{\Large\itshape \nameii} % Name
+	{\Large (\matrknrii)\par} % Matrikelnummer + Absatz
+	{\large \emailii \par} % Email + Absatz
+	
+	\vspace{0.5cm} % Abstand
+	
+	{\Large\itshape \nameiii} % Name
+	{\Large (\matrknriii)\par} % Matrikelnummer + Absatz
+	{\large \emailiii \par} % Email + Absatz
+	
+	\vspace{0.5cm} % Abstand
+	
+	\rule{8cm}{0.6pt} % Die dünne Linie
+	
+	\vspace{2cm} % Abstand
+	
+	{\Large \today\par} % Aktuelles Datum
+	
+	\rule{12cm}{1.0pt} % Die dicke Linie
+	
+\end{titlepage}
+
+%% Titelseite %%
+%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Das eigentliche Dokument %
+
+\section*{Aufgabe 1042} % " * "(Asterisk) bedeutet keine Aufzählungszahl am Anfang
+
+Antwort für die Aufgabe 1042
+
+\subsection*{b)}
+
+Antwort der b)
+
+\section*{Aufgabe 1043}
+
+Aufgabe 1043...
+
+% Das eigentliche Dokument %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document} % Deklaration des Endes des Dokuments

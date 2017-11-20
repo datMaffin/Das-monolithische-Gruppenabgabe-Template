@@ -11,7 +11,7 @@
  1. Füge das ReloadSkim Script in ein Verzeichnis der *$PATH* variable.
  1. Füge die Zeile
     ```vimscript 
-    map <F11> :w<CR>:!make debug<CR
+    map <F11> :w<CR>:!make debug<CR>
     ```
     in *~/.vim/ftplugin/tex.vim* an.
  1. Setze Einstellung in: " *Skim -> Preferences... -> Sync -> PDF-Tex-Support -> 

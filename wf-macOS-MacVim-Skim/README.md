@@ -8,7 +8,7 @@
      ```
 
 ## Installieren von Skripten
- 1. Füge das ReloadSkim Script in ein Verzeichnis der *$PATH* variable.
+ 1. Füge das ReloadSkim Script in ein Verzeichnis der *$PATH* variable ein.
  1. Füge die Zeile
     ```vimscript 
     map <F11> :w<CR>:!make debug<CR>
@@ -34,7 +34,7 @@ Um die den Editor + Viewer(wenn schon eine PDF vorhanden ist) zu starten.
  - Vim: Schnell kompilieren und Skim neu laden: **F11**
  - Vim: Final kompilieren **:!make**
  - Skim: **CMD+LShift+LMouse** um an die Stelle in Vim zu springen (bei Problemen
-   einfach neu kompilieren.
+   mit Synctex einfach mal neu kompilieren).
 
 # Empfohlene Plugins (für Vim)
  - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)

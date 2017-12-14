@@ -29,7 +29,7 @@ Doppelklick auf *make_open* oder start im Terminal:
 ```
 $ ./make_open
 ```
-Um die den Editor + Viewer(wenn schon eine PDF vorhanden ist) zu starten.
+Um den Editor + PDF-Viewer(wenn schon eine PDF vorhanden ist) zu starten.
 ## Interagieren der Programme
  - Vim: Schnell kompilieren und Skim neu laden: **F11**
  - Vim: Final kompilieren **:!make**

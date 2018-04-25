@@ -4,7 +4,7 @@ angesammelt haben. Zusätzlich ist auch eine Anzahl an Workflows und die
 Tools die dazu benötigt werden zu finden.
 
 ## Struktur des Repository
-In Ordnern mit dem Suffix **wf** befinden sich die Tools für den entsprechenden
+In Ordnern mit dem Präfix **wf** befinden sich die Tools für den entsprechenden
 **Workflow**.
 
-Ordner mit dem Suffix **tp** befinden ein entsprechendes **Template**.
+Ordner mit dem Präfix **tp** befinden ein entsprechendes **Template**.

@@ -37,5 +37,5 @@ Um den Editor + PDF-Viewer(wenn schon eine PDF vorhanden ist) zu starten.
    mit Synctex einfach mal neu kompilieren).
 
 # Empfohlene Plugins (für Vim)
- - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
  - [Syntastic](https://github.com/vim-syntastic/syntastic)
+ - [vim-tex-syntax](https://github.com/gi1242/vim-tex-syntax)

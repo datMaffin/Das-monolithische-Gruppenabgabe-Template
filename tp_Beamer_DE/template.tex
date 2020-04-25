@@ -1,0 +1,168 @@
+\documentclass{beamer}
+
+\usepackage{FiraSans}
+\usepackage{firamath-otf}
+\usepackage[tx]{plex-mono}
+\usepackage[ngerman]{babel}
+\usepackage[ngerman]{selnolig}
+
+% Beamer Einstellungen ========================================================
+\beamertemplatenavigationsymbolsempty%
+\usetheme{default}
+
+% Nummeriere Sektionen und Subsektionen
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{footline}[frame number]
+
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+\AtBeginSection[] {%
+    \begin{frame}
+        \frametitle{\insertsectionhead}
+        \tableofcontents[currentsection]
+        \pdfpcnote{Gliederung}
+    \end{frame}
+}
+
+% Weitere Usepackage Befehle ==================================================
+\usepackage[duration=30]{pdfpc}
+\usepackage{graphicx}
+\usepackage{listings}
+
+% Mein Colorscheme ============================================================
+\definecolor{my-blue}{rgb}{0.0392,0.333,0.5804}
+\definecolor{my-green}{rgb}{0,0.7216,0}
+\definecolor{my-red}{rgb}{0.902,0,0}
+\definecolor{my-orange}{rgb}{0.902,0.4314,0}
+\definecolor{my-magenta}{rgb}{0.702,0,0.4392}
+
+% LstListing-Formate ==========================================================
+\lstdefinestyle{cpp}{
+    language=C++,
+    basicstyle=\small\ttfamily,
+    frame=tb,
+    xleftmargin=\parindent,
+    keywordstyle=\color{my-blue}\textbf,
+    stringstyle=\color{my-red},
+    commentstyle=\color{my-green}\textit,
+    morecomment=[l][\color{my-magenta}]{\#},
+    framexleftmargin=5pt,
+    framexrightmargin=5pt,
+    framextopmargin=5pt,
+    framexbottommargin=5pt,
+    literate={~}{$\sim$}1,
+    morekeywords={concept, requires}
+}
+
+
+% Titel Slide =================================================================
+\title{Titelname}
+\subtitle{Untertitel}
+\author{Marvin Dostal}
+\institute{{\bf Betreuer:} Betreuer Name}
+\date{\today}
+
+% Start Document ==============================================================
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Gliederung}
+    \tableofcontents[hideallsubsections]
+    \clearpage
+
+    \pdfpcnote{Gliederung}
+    \pdfpcnote{1 Einleitung}
+    \pdfpcnote{2 Dünngitter}
+    \pdfpcnote{3 MPI}
+    \pdfpcnote{4 Combigrid Framework}
+    \pdfpcnote{5 Lastbalancierung}
+    \pdfpcnote{6 Aussichten}
+\end{frame}
+
+\section{Einleitung}
+\subsection{C-Style}
+
+\begin{frame}[fragile] % Begin Frame ------------------------------------------
+    \frametitle{\secname: \subsecname}
+
+    \pdfpcnote{Einfachste Art der Typenlöschung...}
+    \pdfpcnote{}
+    \pdfpcnote{Kombinationsmöglichkeiten schon sichtbar!}
+
+    \begin{block}{Cast zu einem d \texttt{dvoidP}-Pointer}
+        \begin{lstlisting}[style=cpp, numbers=left]
+// random comment
+YT_1300F millenium_falcon;
+Constitution uss_enterprise;
+
+void *arr[2];
+arr[0] = (void*) &millenium_falcon;
+arr[1] = (void*) &uss_enterprise;
+        \end{lstlisting}
+
+        \begin{itemize}
+            \item Typ wird durch den Cast gelöscht
+                \pause
+            \item Kombiniationsmöglichkeiten durch Type Erasure erkennbar
+                \begin{itemize}
+                    \item Zwei (völlig) unabhängige Objekte können in ein Array 
+                        zusammengefasst werden
+                \end{itemize}
+        \end{itemize}
+    \end{block}
+
+\end{frame} 
+
+\begin{frame}
+    \begin{block}{Etwas Mathematisches}
+        \begin{itemize}
+            \item $a = b + 1$
+            \item $\alpha \beta = \sum_i i$
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Etwas italics}
+        \begin{itemize}
+            \item Hier ist etwas \textit{italic}. 
+            \item \textit{Mehr italics!}
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Etwas bold}
+        \begin{itemize}
+            \item Hier ist etwas \textbf{bold}. 
+            \item \textbf{Mehr bold!}
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{Etwas bold italic mono}
+        \begin{itemize}
+            \item Hier ist etwas \texttt{\textit{\textbf{mono bold-italic}}}. 
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Teste Ligaturen}
+        \begin{itemize}
+            \item fliegen hoffen Hofflasche
+            \item \textit{fliegen hoffen}
+        \end{itemize}
+    \end{block}
+\end{frame}
+% End Frame -------------------------------------------------------------------
+
+
+\end{document}

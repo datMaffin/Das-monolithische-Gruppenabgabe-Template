@@ -1,8 +1,15 @@
 \documentclass{beamer}
 
+% Lade Pakete, die Symbole hinzufügen könnten.
+% Diese sollten vor den Fonteinstellungen geladen werden; 
+% siehe unicode-math Dokumentation.
+\usepackage{amsmath} % Setup before fonts...
+
 \usepackage{FiraSans}
-\usepackage{firamath-otf}
-\usepackage[tx]{plex-mono}
+\usepackage[mathrm=sym]{unicode-math}
+\setmathfont{Fira Math}
+%\usepackage[tx]{plex-mono}  % possible to use instead of sourcecodepro
+\usepackage[scale=1.06]{sourcecodepro}  % I feel like it fits better with fira sans
 \usepackage[ngerman]{babel}
 \usepackage[ngerman]{selnolig}
 

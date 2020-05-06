@@ -5,11 +5,12 @@
 % siehe unicode-math Dokumentation.
 \usepackage{amsmath} % Setup before fonts...
 
+%\usepackage[tx]{plex-mono}  % possible to use instead of sourcecodepro
+\usepackage[scale=1.06]{sourcecodepro}  % I feel like it fits better with fira sans
+\usepackage[scale=1.06]{sourceserifpro}
 \usepackage{FiraSans}
 \usepackage[mathrm=sym]{unicode-math}
 \setmathfont{Fira Math}
-%\usepackage[tx]{plex-mono}  % possible to use instead of sourcecodepro
-\usepackage[scale=1.06]{sourcecodepro}  % I feel like it fits better with fira sans
 \usepackage[ngerman]{babel}
 \usepackage[ngerman]{selnolig}
 
@@ -40,6 +41,11 @@
 }
 
 % Weitere Usepackage Befehle ==================================================
+
+% Current workaround to not include any notes/comments into the pdf.
+% uncomment if pdfpc annotations shall not be embedded in the resulting pdf:
+%\usepackage[final]{pdfcomment}  
+
 \usepackage[duration=30]{pdfpc}
 \usepackage{graphicx}
 \usepackage{listings}
@@ -135,6 +141,7 @@ arr[1] = (void*) &uss_enterprise;
         \begin{itemize}
             \item $a = b + 1$
             \item $\alpha \beta = \sum_i i$
+            \item $\forall x \in \mathbb{N}\cos(x) = -\sin(x)$
         \end{itemize}
     \end{block}
 \end{frame}

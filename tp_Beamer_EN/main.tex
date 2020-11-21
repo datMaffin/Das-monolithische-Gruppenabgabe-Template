@@ -1,0 +1,188 @@
+\documentclass{beamer}
+
+\usepackage{amsmath} % Setup before fonts; see unicode-math documentation
+
+%\usepackage[tx]{plex-mono}  % possible to use instead of sourcecodepro
+%\usepackage[scale=1.06]{sourcecodepro}  % I feel like it fits better with fira sans
+%\usepackage[scale=1.06]{sourceserifpro}
+
+% Mono version of Fira; italics are only slanted. However, avoiding italics in presentation may be good anyhow...
+\usepackage[lf]{FiraMono} 
+
+\usepackage{FiraSans}
+\usepackage[mathrm=sym]{unicode-math}
+\setmathfont{Fira Math}
+\usepackage[english]{babel}
+\usepackage[english]{selnolig}
+
+% My Beamer Settings ==========================================================
+\beamertemplatenavigationsymbolsempty%
+\usetheme{default}
+
+% Number sections and subsections
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{footline}[frame number]
+
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+\AtBeginSection[] {%
+    \begin{frame}
+        \frametitle{\insertsectionhead}
+        \tableofcontents[currentsection]
+        \note{Gliederung}
+    \end{frame}
+}
+
+% More used packages ==========================================================
+
+% comment out when no notes are needed
+\setbeameroption{show notes on second screen}
+
+\usepackage[duration=30]{pdfpc}
+\usepackage{graphicx}
+\usepackage{listings}
+% ...
+
+
+% listings settings ===========================================================
+\definecolor{my-blue}{rgb}{0.0392,0.333,0.5804}
+\definecolor{my-green}{rgb}{0,0.7216,0}
+\definecolor{my-red}{rgb}{0.902,0,0}
+\definecolor{my-orange}{rgb}{0.902,0.4314,0}
+\definecolor{my-magenta}{rgb}{0.702,0,0.4392}
+
+\lstdefinestyle{cpp}{
+    language=C++,
+    basicstyle=\small\ttfamily,
+    frame=tb,
+    xleftmargin=\parindent,
+    keywordstyle=\color{my-blue}\textbf,
+    stringstyle=\color{my-red},
+    commentstyle=\color{my-green}\textit,
+    morecomment=[l][\color{my-magenta}]{\#},
+    framexleftmargin=5pt,
+    framexrightmargin=5pt,
+    framextopmargin=5pt,
+    framexbottommargin=5pt,
+    literate={~}{$\sim$}1,
+    morekeywords={concept, requires}
+}
+
+
+% Titel slide =================================================================
+\title{On Learning Meaningful Assert Statements for Unit Test Cases}
+\subtitle{Seminar: Machine Learning for Programming}
+\author{Marvin Dostal}
+\institute{Student at the University of Stuttgart}
+\date{\today}
+
+% Start document ==============================================================
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[hideallsubsections]
+    \clearpage
+
+    \note{
+        Outline
+        \begin{enumerate}
+            \item Introduction
+            \item Approach
+            \item Evaluation
+            \item Discussion
+            \item Conclusion
+        \end{enumerate}
+    }
+\end{frame}
+
+\section{Outline}
+\subsection{C-Style}
+
+\begin{frame}[fragile] % Begin Frames ------------------------------------------
+    \frametitle{\secname: \subsecname}
+
+    \begin{block}{Cast to \texttt{dvoidP}-Pointer}
+        \begin{lstlisting}[style=cpp, numbers=left]
+// random comment
+YT_1300F millenium_falcon;
+Constitution uss_enterprise;
+
+void *arr[2];
+arr[0] = (void*) &millenium_falcon;
+arr[1] = (void*) &uss_enterprise;
+        \end{lstlisting}
+
+        \begin{itemize}
+            \item Typ deleted by cast
+                \pause
+            \item Possible combinations recognizeable thatnks to \textbf{Type Erasue}
+                \begin{itemize}
+                    \item Two (completely) independent objects are able to be included in one array.
+                \end{itemize}
+        \end{itemize}
+    \end{block}
+
+    \note{
+        \begin{itemize}
+            \item Einfachste Art der Typenlöschung...
+            \item Kombinationsmöglichkeiten schon sichtbar!
+        \end{itemize}
+    }
+
+\end{frame} 
+
+\begin{frame}
+    \begin{block}{Little bit of math}
+        \begin{itemize}
+            \item $a = b + 1$
+            \item $\alpha \beta = \sum_i i$
+            \item $\forall x \in \mathbb{N}\cos(x) = -\sin(x)$
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Some italics}
+        \begin{itemize}
+            \item Here is \textit{italic}. 
+            \item \textit{More italics!}
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Something bold}
+        \begin{itemize}
+            \item Here is \textbf{bold}. 
+            \item \textbf{More bold!}
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{Some bold italic mono}
+        \begin{itemize}
+            \item Here is \texttt{\textit{\textbf{mono bold-italic}}}. 
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Test Ligature}
+        \begin{itemize}
+            \item fly Kafka
+            \item \textit{fly Kafka}
+        \end{itemize}
+    \end{block}
+\end{frame}
+% End Frame -------------------------------------------------------------------
+
+
+\end{document}
